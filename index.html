@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -5,6 +7,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <title>ABM Reminder (version internationale)</title>
     
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Système de rappels intelligent international avec IA et CallMeBot pour une gestion de temps efficace.">
+    <meta name="keywords" content="rappel, reminder, ABM, gestion de temps, productivité, assistant personnel, CallMeBot, WhatsApp, PWA, organisation, agenda">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="ABM Reminder (version internationale)">
+    <meta property="og:description" content="Système de rappels intelligent international avec IA et CallMeBot.">
+    <meta property="og:image" content="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI1MTIiIGhlaWdodD0iNTEyIj48Y2lyY2xlIGN4PSIyNTYiIGN5PSIyNTYiIHI9IjIxMy4zIiBmaWxsPSIjNjM2NmYxIi8+PHRleHQgeD0iMjU2IiB5PSIyNjYiIGZpbGw9IiNmZmZmZmYiIGZvbnQtc2l6ZT0iODAiIHRleHQtYW5jaG9yPSJtaWRkbGUiPuKaoTwvdGV4dD48L3N2Zz4=">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:title" content="ABM Reminder (version internationale)">
+    <meta property="twitter:description" content="Système de rappels intelligent international avec IA et CallMeBot.">
+    <meta property="twitter:image" content="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI1MTIiIGhlaWdodD0iNTEyIj48Y2lyY2xlIGN4PSIyNTYiIGN5PSIyNTYiIHI9IjIxMy4zIiBmaWxsPSIjNjM2NmYxIi8+PHRleHQgeD0iMjU2IiB5PSIyNjYiIGZpbGw9IiNmZmZmZmYiIGZvbnQtc2l6ZT0iODAiIHRleHQtYW5jaG9yPSJtaWRkbGUiPuKaoTwvdGV4dD48L3N2Zz4=">
+
     <!-- PWA Configuration -->
     <link rel="manifest" href="data:application/json;base64,ewogICJuYW1lIjogIkFCTSBSZW1pbmRlciAodmVyc2lvbiBpbnRlcm5hdGlvbmFsZSkiLAogICJzaG9ydF9uYW1lIjogIkFCTSBSZW1pbmRlciIsCiAgImRlc2NyaXB0aW9uIjogIlN5c3TDqG1lIGRlIHJhcHBlbHMgaW50ZWxsaWdlbnQgaW50ZXJuYXRpb25hbCBhdmVjIElBIGV0IENhbGxNZUJvdCIsCiAgInN0YXJ0X3VybCI6ICIvIiwKICAiZGlzcGxheSI6ICJzdGFuZGFsb25lIiwKICAiYmFja2dyb3VuZF9jb2xvciI6ICIjNjY3ZWVhIiwKICAidGhlbWVfY29sb3IiOiAiIzYzNjZmMSIsCiAgIm9yaWVudGF0aW9uIjogInBvcnRyYWl0IiwKICAiaWNvbnMiOiBbCiAgICB7CiAgICAgICJzcmMiOiAiZGF0YTppbWFnZS9zdmcreG1sO2Jhc2U2NCxQSE4yWnlCNGJXeHVjejBpYUhSMGNEb3ZMM2QzZHk1M015NXZjbWN2TWpBd01DOXpkbWNpSUhkcFpIUm9QU0l4TWpBaUlHaGxhV2RvZEQwaU1USXdJajQ4WTJseVkyeGxJR040UFNJMU1DSWdZM2s5SWpVd0lpQnlQU0kwTUNJZ1ptbHNiRDBpSXpZek5qWm1NU0l2UGp4MFpYaDBJSGc5SWpVd0lpQjVQU0kyTUNJZ1ptbHNiRDBpSXpkbVptWm1abVlpSUdadmJuUXRjMmw2WlQwaU1qQWlJSFJsZUhRdFlXNWphRzl5UFNKdGFXUmtiR1VpUGlCQlFrMDhMM1JsZUhRK1BDOXpkbWMrIiwKICAgICAgInNpemVzIjogIjEyMHgxMjAiLAogICAgICAidHlwZSI6ICJpbWFnZS9zdmcreG1sIgogICAgfSwKICAgIHsKICAgICAgInNyYyI6ICJkYXRhOmltYWdlL3N2Zyt4bWw7YmFzZTY0LFBITjJaeUI0Yld4dWN6MGlhSFIwY0RvdkwzZDNkeTUzTXk1dmNtY3ZNakF3TUM5emRtY2lJSGRwWkhSb1BTSXhPVElpSUdobGFXZG9kRDBpTVRreUlqNDhZMmx5WTJ4bElHTjRQU0k1TmlJZ1kza2lQU0k1TmlJZ2NqMGlOekFpSUdacGJHdzlJaU0yTXpZMlpqRWlMejQ4ZEdWNGRDQjRQU0k1TmlJZ2VUMGlNVEF3SWlCbWFXeHNQU0lqTjJabVptWm1ZaUlnWm05dWRDMXphWHBsUFNJek1DSWdkR1Y0ZEMxaGJtTm9iM0k5SW0xcFpHUnNaU0lQaUZCQ1RUd3ZkR1Y0ZEQ0OEwzTjJaejQrIiwKICAgICAgInNpemVzIjogIjE5MngxOTIiLAogICAgICAidHlwZSI6ICJpbWFnZS9zdmcreG1sIgogICAgfSwKICAgIHsKICAgICAgInNyYyI6ICJkYXRhOmltYWdlL3N2Zyt4bWw7YmFzZTY0LFBITjJaeUI0Yld4dWN6MGlhSFIwY0RvdkwzZDNkeTUzTXk1dmNtY3ZNakF3TUM5emRtY2lJSGRwWkhSb1BTSTFNVElpSUdobGFXZG9kRDBpTlRFeUlqNDhZMmx5WTJ4bElHTjRQU0kxTlRZaUlHTjVQU0kxTlRZaUlISTlJakl3TUNJZ1ptbHNiRDBpSXpZek5qWm1NU0l2UGp4eVpXTjBJSGc5SWpFd01DSWdlVDBpTVRBd0lpQjNhV1IwYUQwaU16RXlJaUJvWldsbmFIUTlJak14TWlJZ1ptbHNiRDBpSXpZM04yVmxZU0l2UGp4MFpYaDBJSGc5SWpJMU5pSWdlVDBpTWpVMklpQm1hV3hzUFNJak4yWm1abVptWWlJZ1ptOXVkQzF6YVhwbFBTSTBNQ0lnZEdWNGRDMWhibU5vYjNJOUltMXBaR1JzWlNJUGlGQkNUVHd2ZEdWNGRENDhMM04yWno0KyIsCiAgICAgICJzaXplcyI6ICI1MTJ4NTEyIiwKICAgICAgInR5cGUiOiAiaW1hZ2Uvc3ZnK3htbCIKICAgIH0KICA0Cn0=">
     <meta name="theme-color" content="#6366f1">
@@ -36,6 +54,10 @@
             -webkit-tap-highlight-color: transparent;
         }
         
+        html {
+            scroll-behavior: smooth;
+        }
+
         body {
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             min-height: 100vh;
@@ -119,7 +141,7 @@
         
         .floating-add {
             position: fixed;
-            bottom: 20px;
+            bottom: 95px;
             right: 20px;
             width: 60px;
             height: 60px;
@@ -1428,6 +1450,7 @@
                                     <input type="checkbox" value="1" class="recurring-days mb-1">
                                     <span class="text-xs">Lun</span>
                                 </label>
+
                                 <label class="flex flex-col items-center">
                                     <input type="checkbox" value="2" class="recurring-days mb-1">
                                     <span class="text-xs">Mar</span>
